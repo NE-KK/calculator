@@ -1,17 +1,5 @@
 # Calculator
-# import math
 import tkinter as tk
-
-# PI = 3.1415926535
-
-# calc = input("Type a calculation:\n")
-
-# result = eval(calc)
-
-# result = round(result, 3)
-
-
-# print(result)
 
 root = tk.Tk()
 root.title("Calculator")
