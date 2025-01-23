@@ -1,6 +1,5 @@
 # Calculator
 import tkinter as tk
-from os import replace
 
 
 def input_calculator_1():
@@ -47,23 +46,6 @@ def input_calculator_p():
     pos = len(entry.get())
     entry.insert(pos, ".")
 
-def input_calculator_e():
-    calc = entry.get()
-    calc_list = list(calc)
-    calc_list_len = len(calc_list)
-
-    for i in range(calc_list_len):
-        if calc_list[i] == "%":
-            calc_list[i] = "*1/100"
-        print(calc)
-    calc = ''.join(calc_list)
-    result = eval(calc)
-
-    end = len(entry.get())
-    entry.delete(0, end)
-    entry.insert(0, result)
-
-
 def input_calculator_plus():
     pos = len(entry.get())
     entry.insert(pos, "+")
@@ -84,6 +66,22 @@ def input_calculator_percent():
     pos = len(entry.get())
     entry.insert(pos, "%")
 
+
+def input_calculator_e():
+    calc = entry.get()
+    calc_list = list(calc)
+    calc_list_len = len(calc_list)
+
+    for i in range(calc_list_len):
+        if calc_list[i] == "%":
+            calc_list[i] = "*1/100"
+        print(calc)
+    calc = ''.join(calc_list)
+    result = eval(calc)
+
+    end = len(entry.get())
+    entry.delete(0, end)
+    entry.insert(0, result)
 
 
 if __name__ == "__main__":
