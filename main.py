@@ -87,7 +87,7 @@ def input_calculator_e():
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Calculator")
-    root.geometry("250x300")
+    root.geometry("300x300")
 
     entry = tk.Entry(root, font=15)
     entry.grid(row=0, column=0, columnspan=4)
