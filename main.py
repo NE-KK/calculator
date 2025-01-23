@@ -1,5 +1,6 @@
 # Calculator
 import tkinter as tk
+from os import replace
 
 
 def input_calculator_1():
@@ -47,10 +48,20 @@ def input_calculator_p():
     entry.insert(pos, ".")
 
 def input_calculator_e():
-    calc = eval(entry.get())
+    calc = entry.get()
+    calc_list = list(calc)
+    calc_list_len = len(calc_list)
+
+    for i in range(calc_list_len):
+        if calc_list[i] == "%":
+            calc_list[i] = "*1/100"
+        print(calc)
+    calc = ''.join(calc_list)
+    result = eval(calc)
+
     end = len(entry.get())
     entry.delete(0, end)
-    entry.insert(0, calc)
+    entry.insert(0, result)
 
 
 def input_calculator_plus():
@@ -68,6 +79,10 @@ def input_calculator_mult():
 def input_calculator_div():
     pos = len(entry.get())
     entry.insert(pos, "/")
+
+def input_calculator_percent():
+    pos = len(entry.get())
+    entry.insert(pos, "%")
 
 
 
@@ -126,6 +141,9 @@ if __name__ == "__main__":
     # Row 1 Symbols ----------------------------------------------------------
     bt_plus = tk.Button(root, font=num_font_def, text="+", command=input_calculator_plus)
     bt_plus.grid(row=1, column=3, pady=num_pad_y, padx=num_pad_x)
+
+    bt_percent = tk.Button(root, font=num_font_def, text="%", command=input_calculator_percent)
+    bt_percent.grid(row=1, column=4, pady=num_pad_y, padx=num_pad_x)
 
     # Row 2 Symbols ----------------------------------------------------------
     bt_minus = tk.Button(root, font=num_font_def, text="-", command=input_calculator_minus)
