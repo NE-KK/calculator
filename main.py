@@ -42,10 +42,16 @@ def input_calculator_0():
     pos = len(entry.get())
     entry.insert(pos, "0")
 
-
 def input_calculator_p():
     pos = len(entry.get())
     entry.insert(pos, ".")
+
+def input_calculator_e():
+    calc = eval(entry.get())
+    end = len(entry.get())
+    entry.delete(0, end)
+    entry.insert(0, calc)
+
 
 def input_calculator_plus():
     pos = len(entry.get())
@@ -68,7 +74,7 @@ def input_calculator_div():
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Calculator")
-    root.geometry("300x500")
+    root.geometry("250x300")
 
     entry = tk.Entry(root, font=15)
     entry.grid(row=0, column=0, columnspan=4)
@@ -112,6 +118,9 @@ if __name__ == "__main__":
 
     bt_p = tk.Button(root, font=num_font_def, text=".", command=input_calculator_p)
     bt_p.grid(row=4, column=1, pady=num_pad_y, padx=num_pad_x)
+
+    bt_e = tk.Button(root, font=num_font_def, text="=", command=input_calculator_e)
+    bt_e.grid(row=4, column=2, pady=num_pad_y, padx=num_pad_x)
 
 
     # Row 1 Symbols ----------------------------------------------------------
