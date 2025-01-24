@@ -67,6 +67,17 @@ def input_calculator_percent():
     pos = len(entry.get())
     entry.insert(pos, "%")
 
+def input_calculator_par_open():
+    pos = len(entry.get())
+    entry.insert(pos, "(")
+
+def input_calculator_par_close():
+    pos = len(entry.get())
+    entry.insert(pos, ")")
+
+def clear():
+    end = len(entry.get())
+    entry.delete(0, end)
 
 def calculate():
     calc = entry.get()
@@ -149,12 +160,21 @@ if __name__ == "__main__":
     bt_minus = tk.Button(root, font=num_font_def, text="-", command=input_calculator_minus)
     bt_minus.grid(row=2, column=3, pady=num_pad_y, padx=num_pad_x)
 
+    bt_par_open = tk.Button(root, font=num_font_def, text="(", command=input_calculator_par_open)
+    bt_par_open.grid(row=2, column=4, pady=num_pad_y, padx=num_pad_x)
+
     # Row 3 Symbols ----------------------------------------------------------
     bt_mult = tk.Button(root, font=num_font_def, text="*", command=input_calculator_mult)
     bt_mult.grid(row=3, column=3, pady=num_pad_y, padx=num_pad_x)
 
+    bt_par_close = tk.Button(root, font=num_font_def, text=")", command=input_calculator_par_close)
+    bt_par_close.grid(row=3, column=4, pady=num_pad_y, padx=num_pad_x)
+
     # Row 4 Symbols ----------------------------------------------------------
     bt_div = tk.Button(root, font=num_font_def, text="/", command=input_calculator_div)
     bt_div.grid(row=4, column=3, pady=num_pad_y, padx=num_pad_x)
+
+    bt_clear = tk.Button(root, font=num_font_def, text="C", command=clear)
+    bt_clear.grid(row=4, column=4, pady=num_pad_y, padx=num_pad_x)
 
     root.mainloop()
