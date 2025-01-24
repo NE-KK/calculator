@@ -1,5 +1,6 @@
 # Calculator
 import tkinter as tk
+from tkinter import ttk
 
 
 def input_calculator_1():
@@ -67,7 +68,7 @@ def input_calculator_percent():
     entry.insert(pos, "%")
 
 
-def input_calculator_e():
+def calculate():
     calc = entry.get()
     calc_list = list(calc)
     calc_list_len = len(calc_list)
@@ -88,6 +89,7 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.title("Calculator")
     root.geometry("300x300")
+    root.resizable(False, False)
 
     entry = tk.Entry(root, font=15)
     entry.grid(row=0, column=0, columnspan=4)
@@ -132,7 +134,7 @@ if __name__ == "__main__":
     bt_p = tk.Button(root, font=num_font_def, text=".", command=input_calculator_p)
     bt_p.grid(row=4, column=1, pady=num_pad_y, padx=num_pad_x)
 
-    bt_e = tk.Button(root, font=num_font_def, text="=", command=input_calculator_e)
+    bt_e = tk.Button(root, font=num_font_def, text="=", command=calculate)
     bt_e.grid(row=4, column=2, pady=num_pad_y, padx=num_pad_x)
 
 
