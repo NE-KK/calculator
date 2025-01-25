@@ -2,8 +2,6 @@
 import tkinter as tk
 from tkinter import ttk
 
-#style = ttk.Style()
-#style.configure("Num_Button", font=10)
 
 def input_calculator_1():
     pos = len(entry.get())
@@ -109,7 +107,7 @@ if __name__ == "__main__":
 
     # Number field -----------------------------------------------------------
     num_pad_x = 2
-    num_pad_y = 10
+    num_pad_y = 5
 
     sym_pad_y = 10
     # Row 1 Numbers ----------------------------------------------------------
