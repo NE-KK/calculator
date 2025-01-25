@@ -102,8 +102,8 @@ if __name__ == "__main__":
     root.geometry("400x300")
     root.resizable(False, False)
 
-    entry = ttk.Entry(root, font=15)
-    entry.grid(row=0, column=0, columnspan=4)
+    entry = ttk.Entry(root, font=15, width=35)
+    entry.grid(row=0, column=0, columnspan=5)
 
     # Number field -----------------------------------------------------------
     num_pad_x = 2
